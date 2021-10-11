@@ -1,0 +1,34 @@
+<%- include('./partials/head') %> 
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Product Manager</a>
+      <button type="button" class="btn btn-info" onclick="window.location.href='/productos'">See all products</button>
+  </div>
+</nav>
+
+   <form method="POST" action="/productos" class="form-margin">
+    <div class="form-row align-items-center">
+      <div class="col-sm-3 my-1">
+        <label class="sr-only">Product Name</label>
+        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Name" name="name">
+      </div>
+      <div class="col-sm-3 my-1">
+        <label class="sr-only">Price</label>
+          <input type="number" class="form-control" id="inlineFormInputGroupUsername" placeholder="price" name="price">
+      </div>
+      <div class="col-sm-3 my-1">
+        <label class="sr-only">Image URL</label>
+        <input type="url" class="form-control" id="inlineFormInputGroupUsername" placeholder="url image" name="thumbnail">
+      </div>
+    </div>
+
+     <div class="col-auto my-1 button-style">
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+    </div>
+   </form>
+
+</body>
+
+<%- include('./partials/footer') %> 
