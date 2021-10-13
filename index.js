@@ -23,7 +23,7 @@ app.post('/productos', async (req, res) => {
 
   const idProductSaved = await contenedor.save(newProduct);
 
-  res.render('index');
+  res.redirect('/');
 });
 
 app.get('/productos', async (req, res) => {
