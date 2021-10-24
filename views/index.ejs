@@ -2,26 +2,26 @@
 <html lang="en">
 <%- include('./partials/head') %> 
 <body>
+  <main>
   <nav class="navbar navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Product Manager</a>
-      <button type="button" class="btn btn-info" onclick="window.location.href='/productos'">See all products</button>
   </div>
 </nav>
-
-   <form method="POST" action="/productos" class="form-margin">
+  <h2>Formulario</h2>
+   <form class="form-margin" id="productForm">
     <div class="form-row align-items-center">
       <div class="col-sm-3 my-1">
         <label class="sr-only">Product Name</label>
-        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Name" name="name">
+        <input type="text" class="form-control" id="productName" placeholder="Name" name="name" required>
       </div>
       <div class="col-sm-3 my-1">
         <label class="sr-only">Price</label>
-          <input type="number" class="form-control" id="inlineFormInputGroupUsername" placeholder="price" name="price">
+          <input type="number" class="form-control" id="productPrice" placeholder="price" name="price" required>
       </div>
       <div class="col-sm-3 my-1">
         <label class="sr-only">Image URL</label>
-        <input type="url" class="form-control" id="inlineFormInputGroupUsername" placeholder="url image" name="thumbnail">
+        <input type="url" class="form-control" id="productImg" placeholder="url image" name="thumbnail" required>
       </div>
     </div>
 
@@ -31,7 +31,49 @@
     </div>
    </form>
 
+<br>
+
+<h2>Productos</h2>
+   <% if(lista.length == 0){ %>
+<h1>No hay productos</h1>
+<% } else { %>
+<table class="table form-margin" id="lista-productos">
+  <thead>
+    <tr >
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody id="products">
+    <% lista.forEach(function (product){ %>
+    <tr>
+      <td><%= product.name %> </td>
+      <td><%= product.price %></td>
+      <td><img class="image-size" src=<%= product.thumbnail %>></td>
+    </tr>
+    <% }); %> 
+  </tbody>
+</table>
+
+<% } %>
+   
+
 </body>
 
+<h2>Chat</h2>
+<div class="chat">
+  <form id="chat-form">
+      <input type="email" id="email" placeholder="Tu Email" required>
+      <input type="text" id="texto" placeholder="Cuéntanos algo..." required>
+      <input type="submit" value="Enviar">
+  </form>
+
+  <div id="messages"> 
+
+  </div>
+</div>
+
+</main>
 <%- include('./partials/footer') %> 
 </html>

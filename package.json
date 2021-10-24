@@ -7,5 +7,17 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanantedoro/Clase9.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/alanantedoro/Clase9/issues"
+  },
+  "homepage": "https://github.com/alanantedoro/Clase9#readme",
+  "description": "",
+  "dependencies": {
+    "socket.io": "^4.3.1"
+  }
 }
